@@ -1,0 +1,3 @@
+{
+ "response":{"state":"Andaman & Nicobar Islands","docs":[
+{"id":"1","show":"NICOBAR","dist":"NICOBAR","pc":""},{"id":"2","dist":"NICOBAR","pc":"ANDAMAN AND NICOBAR ISLANDS","show":"NICOBAR-ANDAMAN AND NICOBAR ISLANDS"},{"id":"3","show":"NORTH AND MIDDLE ANDAMAN","dist":"NORTH AND MIDDLE ANDAMAN","pc":""},{"id":"4","dist":"NORTH AND MIDDLE ANDAMAN","pc":"ANDAMAN AND NICOBAR ISLANDS","show":"NORTH AND MIDDLE ANDAMAN-ANDAMAN AND NICOBAR ISLANDS"},{"id":"5","show":"SOUTH ANDAMAN","dist":"SOUTH ANDAMAN","pc":""},{"id":"6","dist":"SOUTH ANDAMAN","pc":"ANDAMAN AND NICOBAR ISLANDS","show":"SOUTH ANDAMAN-ANDAMAN AND NICOBAR ISLANDS"}]}}

@@ -1,0 +1,74 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0099cc"
+    tools:context="com.ecip.msdp.ecitest1.Where">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+            is needed to present your content, e.g. VideoView, SurfaceView,
+            TextureView, etc. -->
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/fullscreen_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:keepScreenOn="true"
+            android:text="@string/dummy_content"
+            android:textColor="#FFF"
+            android:textSize="30sp" />
+    </LinearLayout>
+
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:gravity="center_vertical"
+            android:src="@drawable/eci_header" />
+        <LinearLayout
+            android:id="@+id/fullscreen_content_controls"
+            style="?metaButtonBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="@color/black_overlay"
+            android:orientation="horizontal"
+            tools:ignore="UselessParent">
+
+            <Button
+                android:id="@+id/yes_button"
+                style="?metaButtonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|left"
+                android:layout_weight="1"
+                android:onClick="button_yes"
+                android:text="@string/yes_button" />
+            <Button
+                android:id="@+id/no_button"
+                style="?metaButtonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:layout_weight="1"
+                android:onClick="button_no"
+                android:text="@string/no_button" />
+
+        </LinearLayout>
+    </FrameLayout>
+
+</FrameLayout>

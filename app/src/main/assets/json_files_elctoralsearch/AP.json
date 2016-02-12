@@ -1,0 +1,238 @@
+{
+    "response": {
+        "state": "Andhra Pradesh",
+        "docs": [
+            {
+				"id": "1",
+                "show": "Visakhapatnam",
+                "dist": "Visakhapatnam",
+                "pc": ""
+            },
+			{
+                "id": "2",
+                "show": "Visakhapatnam-Visakhapatnam",
+                "dist": "Visakhapatnam",
+                "pc": "Visakhapatnam"
+            },
+			{
+                "id": "3",
+                "show": "Visakhapatnam-Anakapalli",
+                "dist": "Visakhapatnam",
+                "pc": "Anakapalli"
+            },
+			{
+                "id": "4",
+                "show": "Visakhapatnam-Araku",
+                "dist": "Visakhapatnam",
+                "pc": "Araku"
+            },
+			
+			{
+                "id": "5",
+                "show": "Srikakulam",
+                "dist": "Srikakulam",
+                "pc": ""
+            },
+			{
+                "id": "6",
+                "show": "Srikakulam-Srikakulam",
+                "dist": "Srikakulam",
+                "pc": "Srikakulam"
+            },
+			{
+                "id": "7",
+                "show": "Vizianagaram",
+                "dist": "Vizianagaram",
+                "pc": ""
+            },
+			{
+                "id": "8",
+                "show": "Vizianagaram-Vizianagaram",
+                "dist": "Vizianagaram",
+                "pc": "Vizianagaram"
+            },
+			{
+                "id": "9",
+                "show": "East Godavari",
+                "dist": "East Godavari",
+                "pc": ""
+            },
+			{
+                "id": "10",
+                "show": "East Godavari-Kakinada",
+                "dist": "East Godavari",
+                "pc": "Kakinada"
+            },
+			{
+                "id": "11",
+                "show": "East Godavari-Amalapuram",
+                "dist": "East Godavari",
+                "pc": "Amalapuram"
+            },
+			{
+                "id": "12",
+                "show": "East Godavari-Rajahmundry",
+                "dist": "East Godavari",
+                "pc": "Rajahmundry"
+            },
+			{
+                "id": "13",
+                "show": "West Godavari ",
+                "dist": "West Godavari ",
+                "pc": ""
+            },
+			{
+                "id": "14",
+                "show": "West Godavari-Narasapur ",
+                "dist": "West Godavari ",
+                "pc": "Narasapur"
+            },
+			{
+                "id": "15",
+                "show": "West Godavari-Eluru ",
+                "dist": "West Godavari ",
+                "pc": "Eluru"
+            },
+			{
+                "id": "16",
+                "show": "Krishna ",
+                "dist": "Krishna ",
+                "pc": ""
+            },
+			{
+                "id": "17",
+                "show": "Krishna-Machilipatnam ",
+                "dist": "Krishna ",
+                "pc": "Machilipatnam"
+            },
+			{
+                "id": "18",
+                "show": "Krishna-Vijayawada ",
+                "dist": "Krishna ",
+                "pc": "Vijayawada"
+            },
+			{
+                "id": "19",
+                "show": "Guntur ",
+                "dist": "Guntur ",
+                "pc": ""
+            },
+			{
+                "id": "20",
+                "show": "Guntur-Guntur ",
+                "dist": "Guntur ",
+                "pc": "Guntur"
+            },
+			{
+                "id": "21",
+                "show": "Guntur-Narasaraopet ",
+                "dist": "Guntur ",
+                "pc": "Narasaraopet"
+            },
+			{
+                "id": "22",
+                "show": "Guntur-Bapatla ",
+                "dist": "Guntur ",
+                "pc": "Bapatla"
+            },
+			{
+                "id": "23",
+                "show": "Prakasam ",
+                "dist": "Prakasam ",
+                "pc": ""
+            },
+			{
+                "id": "24",
+                "show": "Prakasam-Ongole ",
+                "dist": "Prakasam ",
+                "pc": "Ongole"
+            },
+			{
+                "id": "25",
+                "show": "Kurnool ",
+                "dist": "Kurnool ",
+                "pc": ""
+            },
+			
+			{
+                "id": "26",
+                "show": "Kurnool-Kurnool ",
+                "dist": "Kurnool ",
+                "pc": "Kurnool"
+            },
+			{
+                "id": "27",
+                "show": "Kurnool-Nandyal ",
+                "dist": "Kurnool ",
+                "pc": "Nandyal"
+            },
+			{
+                "id": "28",
+                "show": "Anantapur  ",
+                "dist": "Anantapur  ",
+                "pc": ""
+            },
+			{
+                "id": "29",
+                "show": "Anantapur-Anantapur  ",
+                "dist": "Anantapur  ",
+                "pc": "Anantapur"
+            },
+			{
+                "id": "30",
+                "show": "Anantapur-Hindupur  ",
+                "dist": "Anantapur  ",
+                "pc": "Hindupur"
+            },
+			{
+                "id": "31",
+                "show": "YSR Kadapa  ",
+                "dist": "YSR Kadapa  ",
+                "pc": ""
+            },
+			{
+                "id": "32",
+                "show": "YSR Kadapa-Kadapa  ",
+                "dist": "YSR Kadapa  ",
+                "pc": "Kadapa"
+            },
+			{
+                "id": "33",
+                "show": "YSR Kadapa-Rajampet  ",
+                "dist": "YSR Kadapa  ",
+                "pc": "Rajampet"
+            },
+			{
+                "id": "34",
+                "show": "Nellore ",
+                "dist": "Nellore ",
+                "pc": ""
+            },
+			{
+                "id": "35",
+                "show": "Nellore-Nellore ",
+                "dist": "Nellore ",
+                "pc": "Nellore"
+            },
+			{
+                "id": "36",
+                "show": "Chittoor ",
+                "dist": "Chittoor ",
+                "pc": ""
+            },
+			{
+                "id": "37",
+                "show": "Chittoor-Chittoor ",
+                "dist": "Chittoor ",
+                "pc": "Chittoor"
+            },
+			{
+                "id": "38",
+                "show": "Chittoor-Tirupati ",
+                "dist": "Chittoor ",
+                "pc": "Tirupati"
+            }
+			
+			 ]
+    }
+}

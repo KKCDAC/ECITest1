@@ -1,0 +1,169 @@
+{
+    "response": {
+        "state": "Telangana",
+        "docs": [
+            {
+                "id": "1",
+                "show": "ADILABAD",
+                "dist": "ADILABAD",
+                "pc": ""
+            },
+            {
+                "id": "2",
+                "show": "ADILABAD-ADILABAD",
+                "dist": "ADILABAD",
+                "pc": "ADILABAD"
+            },
+            {
+                "id": "3",
+                "show": "karimnagar",
+                "dist": "karimnagar",
+                "pc": ""
+            },
+            {
+                "id": "4",
+                "show": "karimnagar-karimnagar",
+                "dist": "karimnagar",
+                "pc": "karimnagar"
+            },
+            {
+                "id": "5",
+                "show": "karimnagar-Peddapalli",
+                "dist": "karimnagar",
+                "pc": "Peddapalli"
+            },
+            {
+                "id": "6",
+                "show": "Nizamabad",
+                "dist": "Nizamabad",
+                "pc": ""
+            },
+            {
+                "id": "7",
+                "show": "Nizamabad-Nizamabad",
+                "dist": "Nizamabad",
+                "pc": "Nizamabad"
+            },
+            {
+                "id": "8",
+                "show": "Medak",
+                "dist": "Medak",
+                "pc": ""
+            },
+            {
+                "id": "9",
+                "show": "Medak-Medak",
+                "dist": "Medak",
+                "pc": "Medak"
+            },
+            {
+                "id": "10",
+                "show": "Medak-Zaheerabad",
+                "dist": "Medak",
+                "pc": "Zaheerabad"
+            },
+            {
+                "id": "11",
+                "show": "Rangareddy",
+                "dist": "Rangareddy",
+                "pc": ""
+            },
+            {
+                "id": "12",
+                "show": "RangarReddy-Malkajgiri",
+                "dist": "RangarReddy",
+                "pc": "Malkajgiri"
+            },
+            {
+                "id": "13",
+                "show": "Rangareddy-Chelvella",
+                "dist": "Rangareddy",
+                "pc": "Chelvella"
+            },
+            {
+                "id": "14",
+                "show": "Hyderabad",
+                "dist": "Hyderabad",
+                "pc": ""
+            },
+            {
+                "id": "15",
+                "show": "Hyderabad-Hyderabad",
+                "dist": "Hyderabad",
+                "pc": "Hyderabad"
+            },
+            {
+                "id": "16",
+                "show": "Hyderabad-Secunderabad",
+                "dist": "Hyderabad",
+                "pc": "Secunderabad"
+            },
+            {
+                "id": "17",
+                "show": "Mahabubnagar",
+                "dist": "Mahabubnagar",
+                "pc": ""
+            },
+            {
+                "id": "18",
+                "show": "Mahabubnagar-Mahabubnagar",
+                "dist": "Mahabubnagar",
+                "pc": "Mahabubnagar"
+            },
+            {
+                "id": "19",
+                "show": "Mahabubnagar-Nagarkurnool",
+                "dist": "Mahabubnagar",
+                "pc": "Nagarkurnool"
+            },
+            {
+                "id": "20",
+                "show": "Nalgonda",
+                "dist": "Nalgonda",
+                "pc": ""
+            },
+            {
+                "id": "21",
+                "show": "Nalgonda-Nalgonda",
+                "dist": "Nalgonda",
+                "pc": "Nalgonda"
+            },
+            {
+                "id": "22",
+                "show": "Nalgonda-Bhongir",
+                "dist": "Nalgonda",
+                "pc": "Bhongir"
+            },
+            {
+                "id": "23",
+                "show": "Warangal",
+                "dist": "Warangal",
+                "pc": ""
+            },
+            {
+                "id": "24",
+                "show": "Warangal-Warangal ",
+                "dist": "Warangal",
+                "pc": "Warangal "
+            },
+            {
+                "id": "25",
+                "show": "Warangal-Mahabubabad ",
+                "dist": "Warangal",
+                "pc": "Mahabubabad "
+            },
+            {
+                "id": "26",
+                "show": "Khammam",
+                "dist": "Khammam",
+                "pc": ""
+            },
+            {
+                "id": "27",
+                "show": "Khammam-Khammam",
+                "dist": "Khammam",
+                "pc": "Khammam"
+            }
+        ]
+    }
+}

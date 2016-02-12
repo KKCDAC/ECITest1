@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">ECI Test 1</string>
+    <string name="title_activity_maps">Map</string>
+
+    <string name="yes_button">Yes</string>
+    <string name="no_button">No</string>
+    <string name="dummy_content">Are you at your house\nOR\nNot more than 2km from house?</string>
+    <string name="splashscreen_hindi_title">राष्ट्रीय मतदाता सेवा पोर्टल</string>
+    <string name="splashscreen_eng_title">National  Voters\' Service Portal</string>
+    <string name="splashscreen_developed">Developed By - CDAC</string>
+    <string name="title_activity_where">Where</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="title_activity_installation">Installation</string>
+</resources>

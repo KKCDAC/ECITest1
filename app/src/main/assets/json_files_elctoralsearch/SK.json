@@ -1,0 +1,3 @@
+{
+ "response":{"state":"Sikkim","docs":[
+{"id":"1","show":"EAST-SIKKIM","dist":"EAST-SIKKIM","pc":""},{"id":"2","dist":"EAST-SIKKIM","pc":"SIKKIM","show":"EAST-SIKKIM-SIKKIM"},{"id":"3","show":"NORTH-SIKKIM","dist":"NORTH-SIKKIM","pc":""},{"id":"4","dist":"NORTH-SIKKIM","pc":"SIKKIM","show":"NORTH-SIKKIM-SIKKIM"},{"id":"5","show":"SOUTH-SIKKIM","dist":"SOUTH-SIKKIM","pc":""},{"id":"6","dist":"SOUTH-SIKKIM","pc":"SIKKIM","show":"SOUTH-SIKKIM-SIKKIM"},{"id":"7","show":"WEST-SIKKIM","dist":"WEST-SIKKIM","pc":""},{"id":"8","dist":"WEST-SIKKIM","pc":"SIKKIM","show":"WEST-SIKKIM-SIKKIM"}]}}
