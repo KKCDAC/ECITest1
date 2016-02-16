@@ -1,9 +1,6 @@
 package com.ecip.msdp.ecitest1;
 
-import android.accounts.Account;
-import android.accounts.AccountManager;
-import android.content.ContentResolver;
-import android.content.Intent;
+import android.content.ContentUris;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
@@ -22,19 +19,20 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.Toast;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import java.util.ArrayList;
 
 public class Installation extends AppCompatActivity {
 
+    private static final String TAG = Installation.class.getName();
+    static int count = 0; //Installation page should open only once after installation.
     public String id = null;
     public String email = null;
     public String phone = null;
     public String accountName = null;
     public String name = null;
-
     SharedPreferences pf;
     SharedPreferences pf_ack;
     EditText edit_name, edit_name_father_hus;
@@ -42,11 +40,8 @@ public class Installation extends AppCompatActivity {
     Spinner spinner_age_list, spinner_year, spinner_month, spinner_day,
             spinner_gender, spinner_state, spinner_district;
     LinearLayout ll1;
-
     ArrayAdapter<String> adapter_age_year, adapter_year, adapter_month, adapter_days, adapter_gender, adapter_state, adapter_dist;
     ArrayList<ElectoralStateClass> arrayList_state = new ArrayList<ElectoralStateClass>();
-
-    static int count = 0; //Installation page should open only once after installation.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +50,7 @@ public class Installation extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
+        final android.support.v7.app.ActionBar actionBar = getSupportActionBar();
         edit_name = (EditText) findViewById(R.id.edit_name);
 
         edit_name_father_hus = (EditText) findViewById(R.id.edit_name_father_hus);
@@ -76,56 +71,38 @@ public class Installation extends AppCompatActivity {
         ll1.setVisibility(View.GONE);
 
 
-      //  Toast.makeText(this, pf.getString("addressline", ""), Toast.LENGTH_LONG).show();
-        //Toast.makeText(this, "" + pf_ack.getBoolean("acknowledge", false), Toast.LENGTH_LONG).show();
+        Cursor c = getContentResolver().query(ContactsContract.Profile.CONTENT_URI, null, null, null, null);
 
-        final AccountManager manager = AccountManager.get(this);
-        final Account[] accounts = manager.getAccountsByType("com.google");
-        if (accounts[0].name != null) {
-            accountName = accounts[0].name;
+        int count = c.getCount();
 
-            ContentResolver cr = this.getContentResolver();
-            Cursor emailCur = cr.query(
-                    ContactsContract.CommonDataKinds.Email.CONTENT_URI, null,
-                    ContactsContract.CommonDataKinds.Email.DATA + " = ?",
-                    new String[]{accountName}, null);
-            while (emailCur.moveToNext()) {
-                id = emailCur
-                        .getString(emailCur
-                                .getColumnIndex(ContactsContract.CommonDataKinds.Email.CONTACT_ID));
-                email = emailCur
-                        .getString(emailCur
-                                .getColumnIndex(ContactsContract.CommonDataKinds.Email.DATA));
-                String newName = emailCur
-                        .getString(emailCur
-                                .getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
-                if (name == null || newName.length() > name.length())
-                    name = newName;
 
-                Log.v("Got contacts", "ID " + id + " Email : " + email
-                        + " Name : " + name);
-                edit_name.setText(name);
+        String[] columnNames = c.getColumnNames();
+        boolean b = c.moveToFirst();
+        int position = c.getPosition();
+        if (count == 1 && position == 0) {
+            for (int j = 0; j < columnNames.length; j++) {
+                String columnName = columnNames[j];
+                String columnValue = c.getString(c.getColumnIndex(columnName));
+
+                //Use the values
+
+              /*  Log.d(TAG,"column_name"+columnName);
+                Log.d(TAG,"column_values"+columnValue);*/
             }
-            emailCur.close();
-            if (id != null) {
-
-                // get the phone number
-                Cursor pCur = cr.query(
-                        ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
-                        null, ContactsContract.CommonDataKinds.Phone.CONTACT_ID
-                                + " = ?", new String[]{id}, null);
-                while (pCur.moveToNext()) {
-                    phone = pCur
-                            .getString(pCur
-                                    .getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
-                    Log.v("Got contacts", "phone" + phone);
-                    Toast.makeText(this, "phone" + phone, Toast.LENGTH_LONG).show();
-                }
-                pCur.close();
-            }
-
+            String columnValue = c.getString(c.getColumnIndex("display_name"));
+            Log.d(TAG, "column_values" + columnValue);
+            edit_name.setText(columnValue);
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setHomeButtonEnabled(true);
+            actionBar.setTitle("Welcome " + columnValue);
+            //URL url = new URL("http://image10.bizrate-images.com/resize?sq=60&uid=2216744464");
+            /*Bitmap bmp = BitmapFactory.decodeFile("com.android.contacts/display_photo/9223372034707292161");
+            ImageView imageView = (ImageView)findViewById(R.id.image);
+            imageView.setImageBitmap(bmp);*/
         }
 
+        c.close();
+    /*
         boolean installed = appInstalledOrNot("in.cdac.gist.android.softkeyboard");
         if(installed) {
             //This intent will help you to launch if the package is already installed
@@ -137,11 +114,12 @@ public class Installation extends AppCompatActivity {
             //System.out.println("App is already installed on your phone");
         } else {
 
-            Intent goToMarket = new Intent(Intent.ACTION_VIEW)
+           *//* Intent goToMarket = new Intent(Intent.ACTION_VIEW)
                     .setData(Uri.parse("market://details?id=com.bt.bms"));
-            startActivity(goToMarket);
+            startActivity(goToMarket);*//*
+            Log.d(TAG,"App is not currently installed on your phone");
            // System.out.println("App is not currently installed on your phone");
-        }
+        }*/
 
         spinner_year.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -216,7 +194,7 @@ public class Installation extends AppCompatActivity {
                     ArrayList<ElectoralDistrictClass> array_list = MethodCollection.get_dist(statecode, getApplicationContext());
                     String[] array_dist = new String[array_list.size()];
                     for (int i = 0; i < array_list.size(); i++) {
-                        array_dist[i] = array_list.get(i).getShow();
+                        array_dist[i] = array_list.get(i).getPc();
                     }
                     adapter_dist = new ArrayAdapter<String>(Installation.this, R.layout.support_simple_spinner_dropdown_item, array_dist);
                     spinner_district.setAdapter(adapter_dist);
@@ -272,8 +250,31 @@ public class Installation extends AppCompatActivity {
             }
         });
         set_spinner();
+       /* Bitmap bitmap = BitmapFactory.decodeStream(openPhoto(9223372034707292161L));
+        Drawable drawable = new BitmapDrawable(getResources(),bitmap);
+        actionBar.setIcon(drawable);*/
     }
 
+    public InputStream openPhoto(long contactId) {
+        Uri contactUri = ContentUris.withAppendedId(ContactsContract.Contacts.CONTENT_URI, contactId);
+        Uri photoUri = Uri.withAppendedPath(contactUri, ContactsContract.Contacts.Photo.CONTENT_DIRECTORY);
+        Cursor cursor = getContentResolver().query(photoUri,
+                new String[]{ContactsContract.Contacts.Photo.PHOTO}, null, null, null);
+        if (cursor == null) {
+            return null;
+        }
+        try {
+            if (cursor.moveToFirst()) {
+                byte[] data = cursor.getBlob(0);
+                if (data != null) {
+                    return new ByteArrayInputStream(data);
+                }
+            }
+        } finally {
+            cursor.close();
+        }
+        return null;
+    }
     private boolean appInstalledOrNot(String uri) {
         PackageManager pm = getPackageManager();
         boolean app_installed;

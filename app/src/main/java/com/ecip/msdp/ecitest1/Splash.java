@@ -8,11 +8,11 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -30,25 +30,19 @@ public class Splash extends AppCompatActivity implements GoogleApiClient.Connect
 
     private static final String TAG = Splash.class.getSimpleName();
     private final static int PLAY_SERVICES_RESOLUTION_REQUEST = 1000;
-    private Location mLastLocation;
-
-    SharedPreferences pf;
-    // Google client to interact with Google API
-    private GoogleApiClient mGoogleApiClient;
-
-    Geocoder geocoder;
-
-    List<Address> addresses;
-
-    // boolean flag to toggle periodic location updates
-    private boolean mRequestingLocationUpdates = false;
-
-    private LocationRequest mLocationRequest;
-
     // Location updates intervals in sec
     private static int UPDATE_INTERVAL = 10000; // 10 sec
     private static int FATEST_INTERVAL = 5000; // 5 sec
     private static int DISPLACEMENT = 10; // 10 meters
+    SharedPreferences pf;
+    Geocoder geocoder;
+    List<Address> addresses;
+    private Location mLastLocation;
+    // Google client to interact with Google API
+    private GoogleApiClient mGoogleApiClient;
+    // boolean flag to toggle periodic location updates
+    private boolean mRequestingLocationUpdates = false;
+    private LocationRequest mLocationRequest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -119,6 +113,30 @@ public class Splash extends AppCompatActivity implements GoogleApiClient.Connect
     @Override
     public void onConnected(@Nullable Bundle bundle) {
        new GetLocation().execute();
+       /* if (Plus.PeopleApi.getCurrentPerson(mGoogleApiClient) != null) {
+
+            Person currentPerson = Plus.PeopleApi
+                    .getCurrentPerson(mGoogleApiClient);
+            String personName = currentPerson.getDisplayName();
+
+            try {
+                int genderInt = currentPerson.getGender();
+                String   gender     = String.valueOf(genderInt);
+                String birthday = currentPerson.getBirthday();
+
+               Log.d(TAG,"gender"+gender+"  birthday"+birthday);
+
+            }
+
+
+            catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+
+            String email = Plus.AccountApi.getAccountName(mGoogleApiClient);
+            Log.d(TAG,""+email);
+        }*/
     }
 
     @Override
@@ -190,16 +208,16 @@ public class Splash extends AppCompatActivity implements GoogleApiClient.Connect
 
             Log.d(TAG, addresses.get(0).getLocality());
 
-            Log.d(TAG, addresses.get(0).getPostalCode().toString());
+//            Log.d(TAG, addresses.get(0).getPostalCode().toString());
             Log.d(TAG, addresses.get(0).getAdminArea());
 
             Log.d(TAG, addresses.get(0).getFeatureName());
 
 //            Log.d(TAG, addresses.get(0).getPremises());
 
-            Log.d(TAG, addresses.get(0).getSubAdminArea());
+//            Log.d(TAG, addresses.get(0).getSubAdminArea());
 
-            Log.d(TAG, addresses.get(0).getSubLocality());
+            //          Log.d(TAG, addresses.get(0).getSubLocality());
 
             SharedPreferences.Editor editor = getSharedPreferences("address",MODE_PRIVATE).edit();
             editor.putString("addressline",addresses.get(0).getAddressLine(0));
